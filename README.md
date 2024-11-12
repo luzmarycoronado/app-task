@@ -1,2 +1,2 @@
 # app-task
-aplicación que registra tareas
+Aplicación que registrar tareas 

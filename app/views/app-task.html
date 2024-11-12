@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Task</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <!--Elmento de reloj-->
+    <div class="clock-widget" id="clock-widget">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand minute-hand"></div>
+            <div class="hand second-hand"></div>
+        </div>
+        <span id="clock-time"></span>
+        <span id="clock-date"></span>
+    </div>
+    <!--Elemento de alertas-->
+    <div class="alert-container">
+    </div>
+    <!--Elemento de carga o loader del app-->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-bar"></div>
+        <div class="loading-bar"></div>
+        <div class="loading-bar"></div>
+        <div class="loading-bar"></div>
+        <div class="loading-bar"></div>
+    </div>
+    <!--Menu bar del app task-->
+    <div class="menu-bar">
+        <img src="../assets/img/logo.png" alt="Logo de la app task" class="menu-logo">
+        <button class="menu-button" id="btn-form-profile">
+            <i class="fas fa-user"></i>
+        </button>
+        <button class="menu-button" id="btn-form-register">
+            <i class="fas fa-plus"></i>
+        </button>
+        <button class="menu-button" id="btn-exit-sesion">
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </div>
+    <!--Fin menu bar del app task-->
+    <!--Modal de registro de tareas-->
+    <div class="modal hidden modal-save-task">
+        <!--Inicio de registro de tareas-->
+        <div class="modal-content">
+            <div class="modal-head">
+                <h2>Registrar Nueva Tareas</h2>
+                <button class="btn-close-modal">
+                    <i class="fas fa-close"></i>
+                </button>
+            </div>
+            <form class="task-form">
+                <div class="form-group-task">
+                    <div class="item-task-1">
+                        <label for="task-title">Titulo</label>
+                        <input type="text" id="task-title" name="task-title" required placeholder="Titulo de la tarea">
+                    </div>
+                    <div>
+                        <label for="task-date">Fecha</label>
+                        <input type="date" id="task-date" name="task-date" required>
+                    </div>
+                    <div>
+                        <label for="task-time">Hora</label>
+                        <input type="time" name="task-time" id="task-time" required>
+                    </div>
+                </div>
+                <label for="task-description">Descripcion</label>
+                <textarea id="task-description" name="task-description" required
+                    placeholder="Descripcion de la tarea"></textarea>
+                <button type="submit">Añadir Tarea</button>
+            </form>
+        </div>
+        <!--Fin de registro de tareas-->
+    </div>
+    <!--Fin modal-->
+    <!--Inicio modal salir de la app-->
+    <div class="modal hidden modal-exit-sesion">
+        <!--Inicio de mesanje de confirmacion-->
+        <div class="modal-content">
+            <div class=" modal-head">
+                <h2>¿Realmente quiere salir del sistema?</h2>
+                <button class="btn-close-modal">
+                    <i class="fas fa-close"></i>
+                </button>
+            </div>
+            <div class="modal-foot">
+                <button class="btn-cancel-modal btn-close-modal">Cancelar</button>
+                <button class="btn-exit-modal">Si</button>
+            </div>
+        </div>
+        <!--Fin de registro de tareas-->
+    </div>
+    <!--Fin modal-->
+    <!--Inicio modal Perfil usuario app-->
+    <div class="modal hidden modal-profile-user">
+        <!--Inicio de mesanje de confirmacion-->
+        <div class="modal-content">
+            <div class="modal-head">
+                <h2>Perfil Usuario</h2>
+                <button class="btn-close-modal">
+                    <i class="fas fa-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-container">
+                    <div class="cover-photo">
+                    </div>
+                    <div class="profile-section">
+                        <div class="profile-image">
+                            <img src="../assets/img/perfil.jpg" alt="Imagen del usuario">
+                        </div>
+                        <div class="user-info">
+                            <h1 class="user-name">Luz Mary Coronado Altamirano</h1>
+                            <p class="user-bio">Hola estoy en app task</p>
+                            <p class="user-joined">Unido desde: <span>Noviembre 2024</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin de registro de tareas-->
+    </div>
+    <!--Fin modal-->
+    <!--Inicio de listado de tareas-->
+    <div class="task-list-container">
+        <h2>Lista de Tareas</h2>
+        <ul id="task-list" class="task-list">
+            <!-- Aquí se agregarán las tareas -->
+            <li>
+                <div class="task-info">
+                    <span class="task-title">Estudiar para el examen</span>
+                    <span class="task-description">De metodologia de desarrollo de software</span>
+                    <span class="task-date">2025-01-25</span>
+                    <span class="task-time">14:30 pm</span>
+                </div>
+                <div class="task-check">
+                    <input type="checkbox" name="task-done" id="task-done">
+                    <label for="task-done">Hecho</label>
+                </div>
+            </li>
+            <li>
+                <div class="task-info">
+                    <span class="task-title">Estudiar para el examen</span>
+                    <span class="task-description">De metodologia de desarrollo de software</span>
+                    <span class="task-date">2025-01-25</span>
+                    <span class="task-time">14:30 pm</span>
+                </div>
+                <div class="task-check">
+                    <input type="checkbox" name="task-done" id="task-done">
+                    <label for="task-done">Hecho</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--Fin de listado de tareas-->
+    <!--Liberia de scripts-->
+    <script src="../assets/js/functions_home.js"></script>
+    <script src="../assets/js/alert.js"></script>
+</body>
+
+</html>
